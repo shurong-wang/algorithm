@@ -10,32 +10,32 @@ header('Content-Type:text/html;charset=utf-8');
 （5）第三次循环，$arr[n]，$arr[n-1]不参与比较，$arr[n-2]成为最大元素
 （6）最终：$arr[0]...<$arr[n-2]<$arr[n-1]<$arr[n] 实现数组排序
 */
-
-$arr = Array( 24, 59, 11, 30, 68, 22, 7, 36, 99, 5 );
-print_r($arr);
-
 function bubbleSort(&$arr){
-	if( $len = count($arr) ){
-		for( $i=0; $i<$len; $i++ ){
-
-			echo '<p style="color:red">第'.($i+1).'次循环 ：$i = '.$i.'<p>';
-
-			for( $j=0; $j<$len-1-$i; $j++ ){
-
-				echo '$j = '. $j . '&nbsp;&nbsp;';
-
-				if( $arr[$j] > $arr[$j+1] ){
-					$tmp = $arr[$j+1];
-					$arr[$j+1] = $arr[$j];
-					$arr[$j] = $tmp;
-				}
+	$len = count($arr);
+    $tmp = null;
+	$flag = true;
+	for( $i=0,$len; $i<$len-1; $i++ ){
+		echo '<p style="color:red">第'.($i+1).'次循环 ：$i = '.$i.'<p>';
+		for( $j=0; $j<$len-1-$i; $j++ ){
+			echo '$j = '. $j . '&nbsp;&nbsp;';
+			if( $arr[$j] > $arr[$j+1] ){
+				$flag = false;
+				$tmp = $arr[$j+1];
+				$arr[$j+1] = $arr[$j];
+				$arr[$j] = $tmp;
 			}
+		}
+		if($flag){
+			return;	
 		}
 	}
 }
 
+$arr = Array( 24, 59, 11, 30, 68, 22, 7, 36, 99, 5 );
 bubbleSort($arr);
-print_r($arr);
 
+echo '<pre>';
+print_r($arr);
+echo '</pre>'
 ?>
 
