@@ -19,7 +19,7 @@ function king($n,$m){
 			array_push($monkey,$head); //如果没数到m或m的倍数,则把该猴放回尾部去.
 		}//否则就抛弃掉了
 	}
-	return$monkey[0];
+	return $monkey[0];
 }
 echo king(3,4),'号猴子成为猴王！';
 
