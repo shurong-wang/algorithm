@@ -35,7 +35,7 @@ function binarySearch($arr, $elem, $start, $end ){
 	return -1; 
 } 
 
-echo binarySearch($arr,'E',3,5).'<br/>';
+echo binarySearch($arr,'E', 3, 5).'<br/>';
 echo '<hr/>';
 
 //折半查找（迭代）
@@ -70,7 +70,7 @@ function halfSearch( $arr, $elem, $start, $end ){
    return -1;
 }
 
-echo halfSearch($arr,'E',3,5).'<br/>';
+echo halfSearch($arr,'E', 3, 5).'<br/>';
 echo '<hr/>';
 	
 ?>
