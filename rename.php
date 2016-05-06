@@ -25,14 +25,14 @@ function batchRename($filedir, $oldname, $newname) {
 
 		  $newfile = str_replace($oldname, $newname, $path);
 
-		  echo "<p>$path<br/> => <span style='color:red;'>$newfile</span></p>";
+		  echo "<p>$path<br/> => <span style='color:red;font-family: Microsoft YaHei'>$newfile</span></p>";
 		  rename($path, $newfile); 
 	 }
 	$dir->close();
 }
 
-$filedir = "G:\PHP视频教程\韩顺平 Linux 教程";
-$oldname = '韩顺平.linux视频教程';
+$filedir = "H:\妙味云堂  JavaScript 教程";
+$oldname = '妙味课堂原创JavaScript视频教程——';
 $newname = '';
 batchRename($filedir, $oldname, $newname);
 ?> 
