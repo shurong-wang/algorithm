@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生成随机颜色</title>
+</head>
+<body>
+<script>
+// 生成随机颜色
+function randomColor0 () {
+	// hex 颜色值是从 #000000 到 #ffffff，# 后面那6位数是十六进制数，相当于 0x000000 到 0xffffff
+	// hex 颜色值的最大值为十六进制 0xffffff，等于十进制 16777215 
+		// 16777215 == parseInt("0xffffff", 16)
+		// 16777215 == 1 * 0xffffff	
+		// 16777216 == 0x1000000 == 0xffffff + 1
+	var randomFloat = Math.random() * (0xffffff + 1) // 十进制随机浮点数
+	var decInt = Math.floor(randomFloat); // 十进制整数，同 decInt = randomFloat << 0;
+	var hexNum = decInt.toString(16)  // 十六进制数字符串
+	var colorNum = ('00000' + hexNum).slice(-6); // 补前导零，并截取后六位
+	var colorStr = '#' + colorNum; // 拼接 hex颜色值字符串
+	return colorStr;
+}
+
+function randomColor () {
+	return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
+}
+
+</script>
+</body>
+</html>
