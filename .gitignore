@@ -42,3 +42,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /.project
+/.idea/
+
+/.settings/
+
+/.buildpath
